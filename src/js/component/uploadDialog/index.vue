@@ -93,7 +93,8 @@ export default {
             if (data.nameList) {
                 this.listName = data.nameList;
             }
-            this.uploadData = { path: data.type + this.path };
+            // this.uploadData = { path: data.type + this.path };
+            this.uploadData = { path: this.path };
             this.show = true;
             if (data.type === 'file://') {
                 this.msg = '(上传脚本文件不得超过2MB！)';

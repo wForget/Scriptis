@@ -299,7 +299,7 @@ export default {
                     // 括号代表精准匹配
                     {
                         type: 'string',
-                        pattern: /^[\w.\\/]*(jar)$/,
+                        pattern: /^[\w:.\\/]*(jar)$/,
                         message:
                             '后缀名只支持jar，且jar包名仅支持英文，数字，下划线！',
                         trigger: 'change',
@@ -402,11 +402,11 @@ export default {
                     this.setting.jarPara
                 }"`;
             } else if (this.fnType === 1) {
-                return `udf.register("${this.setting.name}",${
+                return `spark.udf.register("${this.setting.name}",${
                     this.setting.pyPara.toLowerCase()
                 })`;
             } else if (this.fnType === 2) {
-                return `udf.register[${this.firstUpperCase(
+                return `spark.udf.register[${this.firstUpperCase(
                     this.setting.scalaTypeL
                 )},${this.firstUpperCase(this.setting.scalaTypeR)}]("${
                     this.setting.name
@@ -599,8 +599,9 @@ export default {
         },
 
         setNodePath(node) {
-            const unPrefixPath = node.path.slice(7, node.path.length);
-            this.$set(this.setting, this.getTypes(), unPrefixPath);
+            // const unPrefixPath = node.path.slice(7, node.path.length);
+            // this.$set(this.setting, this.getTypes(), unPrefixPath);
+            this.$set(this.setting, this.getTypes(), node.path);
         },
 
         getTypes() {

@@ -102,7 +102,7 @@ export default {
         logout() {
             api.fetch('/user/logout', 'get').then(() => {
                 this.$emit('clear-session');
-                this.$router.push({ path: '/login' });
+                // this.$router.push({ path: '/login' });
             });
         },
     },
