@@ -35,7 +35,7 @@
       </template>
       <template v-if="currentType === 'tb'">
         <we-menu-item @select="queryTable">查询表</we-menu-item>
-        <we-menu-item @select="openDeleteDialog">删除表</we-menu-item>
+<!--        <we-menu-item @select="openDeleteDialog">删除表</we-menu-item>-->
         <we-menu-item @select="describeTable">查看表结构</we-menu-item>
         <we-menu-item
           @select="openExportDialog">导出表</we-menu-item>

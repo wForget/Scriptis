@@ -174,7 +174,7 @@ export default {
             return this.currentNode && this.currentNode._level === 1;
         },
         isUnShare() {
-            return this.currentNode && this.currentNode.data && !this.currentNode.data.shared && this.currentNode.data.udfType !== 0;
+            return this.currentNode && this.currentNode.data && !this.currentNode.data.shared; // && this.currentNode.data.udfType !== 0;
         },
     },
     created() {
